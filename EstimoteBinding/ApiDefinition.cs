@@ -20,7 +20,7 @@ namespace EstimoteBinding {
 	}
 
 
-	[Model, BaseType (typeof (NSObject))]
+	[Model, Protocol, BaseType (typeof (NSObject))]
 	public partial interface ESTBeaconDelegate {
 
 		[Export ("beaconConnectionDidFail:withError:")]
@@ -154,7 +154,7 @@ namespace EstimoteBinding {
 		void UpdateBeaconFirmwareWithProgress (ESTStringCompletionBlock progress, ESTCompletionBlock completion);
 	}
 
-	[Model, BaseType (typeof (NSObject))]
+	[Model, Protocol,  BaseType (typeof (NSObject))]
 	public partial interface ESTBeaconManagerDelegate {
 
 		[Export ("beaconManager:didRangeBeacons:inRegion:")]
@@ -185,7 +185,7 @@ namespace EstimoteBinding {
 		void DidFailDiscoveryInRegion (ESTBeaconManager manager, ESTBeaconRegion region);
 	}
 
-	[BaseType (typeof (CLLocationManagerDelegate))]
+	[Protocol, BaseType (typeof (CLLocationManagerDelegate))]
 	public partial interface ESTBeaconManager   {
 
 		[Export ("delegate", ArgumentSemantic.Assign)]
